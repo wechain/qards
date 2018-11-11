@@ -1,0 +1,179 @@
+.flex-aligner-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	.center {
+		//	this will alignt center hor & ver
+		max-width: 50%;
+	}
+
+	.top {
+		align-self: flex-start;
+	}
+
+	.bottom {
+		align-self: flex-end;
+	}
+}
+
+.responsive-media {
+	padding-top: 56.25%; /* 450px/800px = 0.5625 */
+	background-size: cover;
+	-moz-background-size: cover; /* Firefox 3.6 */
+	background-position: center; /* Internet Explorer 7/8 */
+}
+
+*.unselectable {
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	/*
+	  Introduced in IE 10.
+	  See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+	*/
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.vcenter {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.ellipsis {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.clearfix::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+.grayscale {
+	-webkit-filter: grayscale(100%);
+	-moz-filter: grayscale(100%);
+	filter: grayscale(100%);
+	transition: all 200ms ease-in-out;
+
+	&:hover {
+		-webkit-filter: grayscale(0);
+		-moz-filter: grayscale(0);
+		filter: grayscale(0);
+	}
+}
+
+@mixin fadeIn() {
+	-webkit-animation: fadeIn 2s;
+	-moz-animation: fadeIn 2s;
+	-ms-animation: fadeIn 2s;
+	-o-animation: fadeIn 2s;
+	animation: fadeIn 2s;
+}
+
+@mixin fadeOut() {
+	-webkit-animation: fadeOut 2s;
+	-moz-animation: fadeOut 2s;
+	-ms-animation: fadeOut 2s;
+	-o-animation: fadeOut 2s;
+	animation: fadeOut 2s;
+}
+
+@mixin maxLinesEllipsis($lines: 2, $lineHeight: 2rem) {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	line-height: $lineHeight;
+	max-height: calc(#{$lineHeight} * 2);
+	-webkit-line-clamp: lines;
+	-webkit-box-orient: vertical;
+}
+
+.fadeIn {
+	@include fadeIn();
+}
+
+.fadeOut {
+	@include fadeOut();
+}
+
+.fadeOutStayOut {
+	@include fadeOut();
+	animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@-moz-keyframes fadeIn { /* Firefox */
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@-webkit-keyframes fadeIn { /* Safari and Chrome */
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@-o-keyframes fadeIn { /* Opera */
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes fadeOut {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+@-moz-keyframes fadeOut { /* Firefox */
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+@-webkit-keyframes fadeOut { /* Safari and Chrome */
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+@-o-keyframes fadeOut { /* Opera */
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}

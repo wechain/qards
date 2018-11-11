@@ -1,0 +1,57 @@
+@import '../theme/blueprint-vars';
+@import "~@blueprintjs/core/src/common/variables";
+@import "~@blueprintjs/core/src/common/colors";
+@import "~@blueprintjs/core/src/accessibility";
+@import "~@blueprintjs/core/src/typography";
+//	blueprint components that we use
+@import "~@blueprintjs/core/src/components/skeleton/skeleton";
+@import "~@blueprintjs/core/src/components/tag/tag";
+@import "~@blueprintjs/core/src/components/breadcrumbs/breadcrumbs";
+@import "~@blueprintjs/core/src/components/button/button";
+@import "~@blueprintjs/core/src/components/callout/callout";
+@import "~@blueprintjs/core/src/components/forms/index";
+@import "~@blueprintjs/core/src/components/icon/icon";
+@import "~@blueprintjs/core/src/components/menu/menu";
+@import "~@blueprintjs/core/src/components/html-table/html-table";
+@import "~@blueprintjs/core/src/components/navbar/navbar";
+@import "~@blueprintjs/core/src/components/popover/popover";
+@import "~@blueprintjs/core/src/components/toast/toast";
+@import "~@blueprintjs/core/src/components/progress-bar/progress-bar";
+@import './utils';
+@import "../app/styles/index";
+
+:focus {
+	outline: none !important;
+}
+
+::selection, .selected {
+	background: $accent;
+	color: $accent-text;
+}
+
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-variant-ligatures: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	text-decoration-skip-ink: auto;
+	background: white;
+
+	&.has-drawer-open {
+		overflow: hidden;
+	}
+}
+
+// resets
+.bp3-button {
+	box-shadow: none !important;
+	background-image: none !important;
+}
+
+.clearfix::after {
+	content: "";
+	clear: both;
+	display: table;
+}

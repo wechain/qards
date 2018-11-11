@@ -1,0 +1,11 @@
+.idea/
+.DS_Store
+.cache
+.netlify
+node_modules
+yarn-error.log
+public
+netlify.toml
+cypress/.Trash-0
+cypress/screenshots
+tmp/
